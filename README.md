@@ -1,15 +1,15 @@
 # R-tips-tricks
 
-##### Install a package
+#### Install a package
 `install.packages("ggplot2")`
 
-##### Load a package
+#### Load a package
 `library(ggplot2)`
 
-##### Read a CSV file
+#### Read a CSV file
 `csv_file = read.csv("csv_file_path", header = FALSE)`
 
-##### For loop
+#### For loop
 ```R
 for (index in 1:25){
 }
@@ -17,37 +17,38 @@ for (index in 1:25){
 ##### Combine two data frames
 `combined = rbind(first, second)`
 
-##### Filter a data frame
+#### Filter a data frame
 `filetered = complete[which(complete$columnName > 1), ]`
 
-##### Print number of rows in a data frame
+#### Print number of rows in a data frame
 `nrow(data)`
 
-##### Plot a histogram (requires package ggplot2)
+#### Plot a histogram (requires package ggplot2)
 `qplot(column_name, data=data, bins = 100, main="title",  ylim=c(0, 1000))`
 
 
-##### Plot overlaying histograms based on column values
+#### Plot overlaying histograms based on column values
 ```
-ggplot(data, aes(x=column_to_plot, fill=column_for_visual_separation)) + geom_histogram(alpha=0.5, position="identity", binwidth=10)
+ggplot(data, aes(x=column_to_plot, fill=column_for_visual_separation)) +
+geom_histogram(alpha=0.5, position="identity", binwidth=10)
 ```
 
-##### Add a column to existing data frame
+#### Add a column to existing data frame
 `data$column_name = 'some_constant_value'`
 
-##### box plot
+#### Box plot
 `boxplot(column_to_plot ~ column_for_unique_plots, data=data, ylab = "title")`
 
-##### Create a new column using existing columns
+#### Create a new column using existing columns
 `data$new_column = as.numeric(data$something/data$something_else)`
 
-##### Replace column values
+#### Replace column values
 `data$some_column[data$some_column == 'old_value'] <- 'new_value'`
 
-##### format column as date time
+#### Format column as date time
 `data$start_time = as.POSIXct(data$start_time, format="%d/%m/%Y %H:%M:%S")`
 
-##### unfactor a column
+#### Unfactor a column
 ```
 library(varhandle)
 data$column_name = unfactor(data[, "column_name"])

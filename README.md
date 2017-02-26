@@ -14,7 +14,7 @@
 for (index in 1:25){
 }
 ```
-##### Combine two data frames
+#### Combine two data frames
 `combined = rbind(first, second)`
 
 #### Filter a data frame
@@ -56,21 +56,21 @@ data$column_name = unfactor(data[, "column_name"])
 # then do the filtering
 filtered = data[which(data$start_time >= "2017-02-18 16:00:00"), ]
 ```
-##### In operator
+#### In operator
 `data$column_name %in% some_other_data[, "column_name"]))`
 
-##### Take subset of data using Not In operator
+#### Take subset of data using Not In operator
 ```
 data_subset = subset(data_to_subset, !(data_to_subset$column_name %in% some_other_data[, "column_name"]))
 ```
 
-##### Concatenate two columns
+#### Concatenate two columns
 `data$concatenated = paste(data$column_one, data$column_two, sep="-")`
 
-##### Extract column as data frame
+#### Extract column as data frame
 new_data_frame = as.data.frame( data_frame[,"column_name"], drop=false)
 
-##### Plot multiple histograms side-by-side
+#### Plot multiple histograms side-by-side
 Function to do the multi-plotting
 ```
 multiplot <- function(..., plotlist=NULL, cols) {

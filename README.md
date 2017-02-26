@@ -52,7 +52,7 @@ data$column_name = unfactor(data[, "column_name"])
 `unique(data_frame$column_name)`
 
 #### Rename column
-colnames(data_frame)[column_index] <- "new_name"
+`colnames(data_frame)[column_index] <- "new_name"`
 
 #### In operator
 `data$column_name %in% some_other_data[, "column_name"]))`

@@ -33,16 +33,27 @@ for (index in 1:25){
 `data$some_column[data$some_column == 'old_value'] <- 'new_value'`
 
 #### Format column as date time
-`data$start_time = as.POSIXct(data$start_time, format="%d/%m/%Y %H:%M:%S")`
+```
+data$start_time = as.POSIXct(data$start_time, format="%d/%m/%Y %H:%M:%S")
+# then do the filtering
+filtered = data[which(data$start_time >= "2017-02-18 16:00:00"), ]
+```
 
 #### Unfactor a column
 ```
 library(varhandle)
 data$column_name = unfactor(data[, "column_name"])
-
-# then do the filtering
-filtered = data[which(data$start_time >= "2017-02-18 16:00:00"), ]
 ```
+
+#### Find data types of data frame
+`sapply(data_frame, class)`
+
+#### Find distinct values
+`unique(data_frame$column_name)`
+
+#### Rename column
+colnames(data_frame)[column_index] <- "new_name"
+
 #### In operator
 `data$column_name %in% some_other_data[, "column_name"]))`
 

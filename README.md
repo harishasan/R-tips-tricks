@@ -23,21 +23,8 @@ for (index in 1:25){
 #### Print number of rows in a data frame
 `nrow(data)`
 
-#### Plot a histogram (requires package ggplot2)
-`qplot(column_name, data=data, bins = 100, main="title",  ylim=c(0, 1000))`
-
-
-#### Plot overlaying histograms based on column values
-```
-ggplot(data, aes(x=column_to_plot, fill=column_for_visual_separation)) +
-geom_histogram(alpha=0.5, position="identity", binwidth=10)
-```
-
 #### Add a column to existing data frame
 `data$column_name = 'some_constant_value'`
-
-#### Box plot
-`boxplot(column_to_plot ~ column_for_unique_plots, data=data, ylab = "title")`
 
 #### Create a new column using existing columns
 `data$new_column = as.numeric(data$something/data$something_else)`
@@ -69,6 +56,18 @@ data_subset = subset(data_to_subset, !(data_to_subset$column_name %in% some_othe
 
 #### Extract column as data frame
 new_data_frame = as.data.frame( data_frame[,"column_name"], drop=false)
+
+#### Plot a histogram (requires package ggplot2)
+`qplot(column_name, data=data, bins = 100, main="title",  ylim=c(0, 1000))`
+
+#### Plot overlaying histograms based on column values
+```
+ggplot(data, aes(x=column_to_plot, fill=column_for_visual_separation)) +
+geom_histogram(alpha=0.5, position="identity", binwidth=10)
+```
+
+#### Box plot
+`boxplot(column_to_plot ~ column_for_unique_plots, data=data, ylab = "title")`
 
 #### Plot multiple histograms side-by-side
 Function to do the multi-plotting

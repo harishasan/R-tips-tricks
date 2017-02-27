@@ -68,6 +68,11 @@ data_subset = subset(data_to_subset, !(data_to_subset$column_name %in% some_othe
 #### Extract column as data frame
 `new_data_frame = as.data.frame( data_frame[,"column_name"], drop=false)`
 
+##### Scatter plot
+```
+plot(data_frame$column1, data_frame$column2, main="title", xlab="x-label ", ylab="y-label", pch=19, col=factor(data_frame$color_column))
+```
+
 #### Plot a histogram (requires package ggplot2)
 `qplot(column_name, data=data, bins = 100, main="title",  ylim=c(0, 1000))`
 

@@ -10,12 +10,12 @@
 `csv_file = read.csv("csv_file_path", header = FALSE)`
 
 #### Write to a CSV file
-`write.csv(data_frame, file = "/file/path.csv")`
+`write.csv(data_frame, file = "/file/path.csv", row.names=FALSE)`
 
-#### Print first 5 rows
+#### Print first 5 rows of a data frame
 `head(data_frame)`
 
-#### Print last 5 rows
+#### Print last 5 rows of a data frame
 `tail(data_frame)`
 
 #### For loop

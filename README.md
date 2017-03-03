@@ -44,6 +44,8 @@ filtered = data[which(data$start_time >= "2017-02-18 16:00:00"), ]
 library(varhandle)
 data$column_name = unfactor(data[, "column_name"])
 ```
+#### Find percentage contribution of each distinct value in a column
+`as.data.frame(prop.table(table(data_frame$column_name)) * 100)`
 
 #### Find data types of data frame
 `sapply(data_frame, class)`

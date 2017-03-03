@@ -13,10 +13,10 @@
 `write.csv(data_frame, file = "/file/path.csv")`
 
 #### Print first 5 rows
-head(data_frame)
+`head(data_frame)`
 
 #### Print last 5 rows
-tail(data_frame)
+`tail(data_frame)`
 
 #### For loop
 ```R

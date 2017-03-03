@@ -32,6 +32,9 @@ for (index in 1:25){
 #### Print number of rows in a data frame
 `nrow(data)`
 
+#### Print summary of a column in a data frame
+`summary(data_frame$column_name)`
+
 #### Add a column to existing data frame
 `data$column_name = 'some_constant_value'`
 

@@ -9,6 +9,15 @@
 #### Read a CSV file
 `csv_file = read.csv("csv_file_path", header = FALSE)`
 
+#### Write to a CSV file
+`write.csv(data_frame, file = "/file/path.csv")`
+
+#### Print first 5 rows
+head(data_frame)
+
+#### Print last 5 rows
+tail(data_frame)
+
 #### For loop
 ```R
 for (index in 1:25){
@@ -69,6 +78,16 @@ data_subset = subset(data_to_subset, !(data_to_subset$column_name %in% some_othe
 
 #### Extract column as data frame
 `new_data_frame = as.data.frame( data_frame[,"column_name"], drop=false)`
+
+#### Stratified sampling
+```
+# you would need caTools package
+install.packages("caTools")
+library(caTools)
+sampled_data = sample.split(data_frame$column_for_sampling, SplitRatio=0.7)
+training_set = sampled_data[sampled_data,]
+test_set = sampled_data[!sampled_data,]
+```
 
 ##### Scatter plot
 ```

@@ -23,6 +23,10 @@
 for (index in 1:25){
 }
 ```
+
+#### Force R not to use exponential notation
+options(scipen = 999)
+
 #### Combine two data frames
 `combined = rbind(first, second)`
 

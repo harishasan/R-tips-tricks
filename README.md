@@ -26,6 +26,9 @@ for (index in 1:25){
 #### Combine two data frames
 `combined = rbind(first, second)`
 
+#### Remove duplicate rows from a data frame
+`no_duplicate_rows = unique(data_frame)`
+
 #### Filter a data frame
 `filetered = complete[which(complete$columnName > 1), ]`
 

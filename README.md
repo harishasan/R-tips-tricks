@@ -45,6 +45,13 @@ for (index in 1:25){
 #### Add a column to existing data frame
 `data$column_name = 'some_constant_value'`
 
+#### Delete a column from data frame
+```
+data_frame = within(data_frame, rm(column_name))
+# or delete multiple
+data_frame = within(data_frame, rm(column_1, column_2))
+```
+
 #### Create a new column using existing columns
 `data$new_column = as.numeric(data$something/data$something_else)`
 

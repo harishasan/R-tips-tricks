@@ -27,8 +27,11 @@ for (index in 1:25){
 #### Force R not to use exponential notation
 `options(scipen = 999)`
 
-#### Combine two data frames
+#### Combine two data frames (vertically, row-wise)
 `combined = rbind(first, second)`
+
+#### Combine two data frames (horizontally, column-wise)
+`combined = cbind(first, second)`
 
 #### Remove duplicate rows from a data frame
 `no_duplicate_rows = unique(data_frame)`
@@ -104,6 +107,27 @@ library(caTools)
 sampled_data = sample.split(data_frame$column_for_sampling, SplitRatio=0.7)
 training_set = sampled_data[sampled_data,]
 test_set = sampled_data[!sampled_data,]
+```
+
+#### Convert discrete values e.g. TCP/UDP, into continous (1/0) columns
+```
+new_columns = model.matrix(~ column_to_convert - 1, data= data_frame ))
+# merge new columns with existing data frame
+converted_data_frame = cbind(data_frame, new_columns)
+# delete source column
+converted_data_frame = within(converted_data_frame, rm(column_to_convert))
+```
+
+#### Keep those columns in a data frame that exists in another
+```
+# we want to keep only those columns in data_frame_1 which are
+# present in data_frame_2.
+# find ids of common columns
+common_columns = as.data.frame(which(colnames(data_frame_1) %in% colnames(data_frame_2)))
+# give this column of ids a new name using index
+colnames(common_columns)[1] <- "id"
+# keep only common columns
+data_frame_1 = data_frame_1[, common_columns$id]
 ```
 
 ##### Scatter plot
